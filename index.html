@@ -25,8 +25,12 @@
         a {
             text-decoration: none;
         }
-        li {
+        ul {
+            padding:0;
+            margin:0;
             list-style: none;
+            text-align: left;
+
         }
         .sidebar {
             width: 200px;
@@ -114,18 +118,10 @@
 </head>
 <body>
     <header>
-        <h1>受洗の見證</h1>
+        <h1>奇異の恩典</h1>
     </header>
     <div class="main-content">
-        <nav class="sidebar">
-            <a href="/TJC/index.htm">奇異の恩典:首頁</a>
-            <ul>
-                <li><a href="/TJC/EX15_all.htm">意外の恩典</a></li>
-                <li><a href="#">警治の見證</a></li>
-                <li><a href="#">重擔の見證</a></li>
-               
-            </ul>
-        </nav>
+        <div id="sidebar-container"></div>
         <main class="content">
             <b style="color: #ff00ff; font-size: 24px;">受洗の見證</b>
             <div class="video-grid">
@@ -159,6 +155,16 @@
             </tr>
         </table>
     </footer>
-    
+    <script>
+        // 加载外部侧边栏 HTML 文件
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading sidebar:', error));
+
+        
+    </script>
    </body>
 </html>
