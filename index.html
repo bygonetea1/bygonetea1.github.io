@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html>
 <head>
-    <meta charset="big-5">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>奇異&#12398;恩典</title>
+    <title>奇異の恩典&#12398;奇異の恩典</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,13 +43,12 @@
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            gap: 12px;
         }
         .video-item {
             position: relative;
-            padding-top: 100%; /* 正方形或近似正方形 */
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
             background-color: #ddd;
-            cursor: pointer;
         }
         .video-item video {
             position: absolute;
@@ -59,30 +58,28 @@
             height: 100%;
             object-fit: cover;
         }
-        .file-name {
+        .video-item .file-name {
             position: absolute;
-            bottom: -20px;
+            bottom: -10px;
             left: 0;
             width: 100%;
             text-align: center;
             background-color: #fff;
-            padding: 5px 0;
+            padding: 0px 0;
             box-sizing: border-box;
         }
         .custom-controls {
             position: absolute;
-            bottom: 10px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border-radius: 5px;
+            /* background-color: rgba(0, 0, 0, 0.5); */
+            padding: 30px 30px;
+            border-radius: 10px;
             color: #fff;
             cursor: pointer;
-            display: none; /* 默认隐藏 */
-        }
-        .custom-controls.show {
-            display: block; /* 显示控制按钮 */
+            /* display: none;   */
+
         }
         .pagination {
             text-align: center;
@@ -103,7 +100,7 @@
             .sidebar {
                 width: 100%;
                 padding: 10px;
-                order: 2;
+                order: 1;
             }
             .content {
                 order: 1;
@@ -116,63 +113,60 @@
         @media (max-width: 480px) {
             .sidebar {
                 padding: 5px;
+                order: 1;
             }
             .content {
                 padding: 5px;
             }
             .video-grid {
-                grid-template-columns: repeat(2, 1fr); /* 每行显示两个视频 */
-            }
-            .video-item {
-                padding-top: 100%; /* 调整为正方形或近似正方形 */
+               grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>奇異&#12398;恩典</h1>
+        <h1>受洗の見證</h1>
     </header>
     <div class="main-content">
         <nav class="sidebar">
-            <a href="/TJC/index.htm">奇異&#12398;恩典:首頁</a>
+            <a href="/TJC/index.htm">奇異の恩典:首頁</a>
             <ul>
-                <li><a href="/TJC/EX15_all.htm">意外&#12398;恩典</a></li>
-                <li><a href="#">警治&#12398;見證</a></li>
-                <li><a href="#">重擔&#12398;見證</a></li>
-                <!-- 添加更多選單項目 -->
+                <li><a href="/TJC/EX15_all.htm">意外の恩典</a></li>
+                <li><a href="#">警治の見證</a></li>
+                <li><a href="#">重擔の見證</a></li>
+               
             </ul>
         </nav>
         <main class="content">
-            <b style="color: #ff00ff; font-size: 24px;">受洗&#12398;見證</b>
+            <b style="color: #ff00ff; font-size: 24px;">受洗の見證</b>
             <div class="video-grid">
-                <!-- 這裡添加視頻項目，使用 div 替代實際視頻 -->
-                <div class="video-item" onclick="toggleFullScreen(this)">
-                    <video src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video>
-                    <div class="file-name">23086.mp4</div>
-                    <div class="custom-controls" onclick="playVideo(this.previousElementSibling)">播放</div>
-                </div>
-                <div class="video-item" onclick="toggleFullScreen(this)">
-                    <video src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video>
-                    <div class="file-name">23068.mp4</div>
-                    <div class="custom-controls" onclick="playVideo(this.previousElementSibling)">播放</div>
-                </div>
-                <!-- 添加更多视频项 -->
+                
+                <div class="video-item" onclick="toggleFullScreen(this)"><video preload="none"  src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video><div class="file-name">23086.mp4</div> <div class="custom-controls"></div></div>
+                <div class="video-item" onclick="toggleFullScreen(this)"><video preload="none"  src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video><div class="file-name">23086.mp4</div> <div class="custom-controls"></div></div>
+                <div class="video-item" onclick="toggleFullScreen(this)"><video preload="none"  src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video><div class="file-name">23086.mp4</div> <div class="custom-controls"></div></div>
+                <div class="video-item" onclick="toggleFullScreen(this)"><video preload="none"  src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video><div class="file-name">23086.mp4</div> <div class="custom-controls"></div></div>
+                <div class="video-item" onclick="toggleFullScreen(this)"><video preload="none"  src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video><div class="file-name">23086.mp4</div> <div class="custom-controls"></div></div>
+                <div class="video-item" onclick="toggleFullScreen(this)"><video preload="none"  src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video><div class="file-name">23086.mp4</div> <div class="custom-controls"></div></div>
+                <div class="video-item" onclick="toggleFullScreen(this)"><video preload="none"  src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video><div class="file-name">23086.mp4</div> <div class="custom-controls"></div></div>
+                <div class="video-item" onclick="toggleFullScreen(this)"><video preload="none"  src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video><div class="file-name">23086.mp4</div> <div class="custom-controls"></div></div>
+                <div class="video-item" onclick="toggleFullScreen(this)"><video preload="none"  src="video\HU20148-28-7 (1).mp4" type="video/mp4" poster muted></video><div class="file-name">23086.mp4</div> <div class="custom-controls"></div></div>
+                
+
             </div>
         </main>
     </div>
     <footer class="pagination">
         <table>
             <tr>
-                <td>受洗&#12398;見證 / 頁次 :</td>
+                <td>受洗の見證 / 頁次 :</td>
                 <td>3</td>
                 <td>2</td>
                 <td>1</td>
-                <td>頁次 / 受洗&#12398;見證</td>
+                <td>頁次 / 受洗の見證</td>
             </tr>
         </table>
     </footer>
-
     <script>
         function toggleFullScreen(videoContainer) {
             const video = videoContainer.querySelector('video');
@@ -195,5 +189,5 @@
             }
         }
     </script>
-</body>
+   </body>
 </html>
