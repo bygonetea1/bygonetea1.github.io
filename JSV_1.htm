@@ -226,38 +226,29 @@ li{border:0;border-collapse:collapse;border-spacing:0;list-style:none;margin:0;p
     newTab.document.write(content);
     newTab.document.close();
 }
+
 document.addEventListener("DOMContentLoaded", function() {
     var links = document.querySelectorAll('a');
     links.forEach(function(link) {
-        link.addEventListener('pointerdown', function(event) {
-            event.preventDefault();
+        link.addEventListener('touchstart', function(event) {
+            event.preventDefault();  // 確保阻止默認行為
             event.stopPropagation();
             var href = link.getAttribute('href');
-            var href_fileName = link.getAttribute('href').split('/').pop();
+            var href_fileName = href.split('/').pop();
+            openNewTabWithVideo(href, href_fileName);
+        });
+        
+        // 可?：也可以添加 click 事件作??用
+        link.addEventListener('click', function(event) {
+            event.preventDefault();  // 確保阻止默認行為
+            event.stopPropagation();
+            var href = link.getAttribute('href');
+            var href_fileName = href.split('/').pop();
             openNewTabWithVideo(href, href_fileName);
         });
     });
 });
-        /* document.addEventListener("DOMContentLoaded", function() {
-            var links = document.querySelectorAll('a');
-			links.forEach(function(link) {
-                link.addEventListener('touchstart', function(event) {
-                    event.preventDefault(); // 阻止a標籤默認行為
-					event.stopPropagation();
-                    var href = link.getAttribute('href');
-					var href_fileName = link.getAttribute('href').split('/').pop();
-                    openNewTabWithVideo(href,href_fileName);
-                });
-
-                link.addEventListener('click', function(event) {
-                    event.preventDefault(); // 阻止a標籤默認行為
-					event.stopPropagation();
-                    var href = link.getAttribute('href');
-					var href_fileName = link.getAttribute('href').split('/').pop();
-                    openNewTabWithVideo(href,href_fileName);
-                });
-            });
-		}); */
+       
 
         
     </script>
