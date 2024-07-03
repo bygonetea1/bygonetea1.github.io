@@ -226,7 +226,19 @@ li{border:0;border-collapse:collapse;border-spacing:0;list-style:none;margin:0;p
     newTab.document.write(content);
     newTab.document.close();
 }
-        document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
+    var links = document.querySelectorAll('a');
+    links.forEach(function(link) {
+        link.addEventListener('pointerdown', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            var href = link.getAttribute('href');
+            var href_fileName = link.getAttribute('href').split('/').pop();
+            openNewTabWithVideo(href, href_fileName);
+        });
+    });
+});
+        /* document.addEventListener("DOMContentLoaded", function() {
             var links = document.querySelectorAll('a');
 			links.forEach(function(link) {
                 link.addEventListener('touchstart', function(event) {
@@ -245,7 +257,7 @@ li{border:0;border-collapse:collapse;border-spacing:0;list-style:none;margin:0;p
                     openNewTabWithVideo(href,href_fileName);
                 });
             });
-		});
+		}); */
 
         
     </script>
