@@ -37,13 +37,13 @@ ul {
 .content {
     flex: 1;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     overflow-y: auto;
 }
 .video-grid {
     display: grid;
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-    gap: 12px;
+    gap: 6px;
     grid-template-columns: repeat(6,1fr);
 }
 .video-item {
@@ -93,9 +93,10 @@ ul {
     }
     .content {
         order: 1;
-        padding: 10px;
+        padding: 40px;
     }
     .video-grid {
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
+         gap: 6px; 
     }
 }
